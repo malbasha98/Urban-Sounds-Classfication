@@ -53,3 +53,7 @@ To perform audio file classification using the ResNet18 architecture on the Urba
 
 - Run the train.py script to train the model and evaluate its performance. This script will use the preprocessed data and the ResNet18 model to train the classifier on the UrbanSounds8k dataset.
 
+  ## Results
+
+  An accuracy of 72%-73% was achieved using Mel Spectrograms, while an accuracy of 68%-70% was achieved using MFCCs.
+
