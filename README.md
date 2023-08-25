@@ -1,22 +1,22 @@
-Klasifikacija audio fajlova iz UrbanSounds8k dataseta primenom Resnet18 arhitekture.
+Classification of audio files from the UrbanSounds8k dataset using the ResNet18 architecture.
 
-## Opis
-Sistem se sastoji iz sledecih skripti:
+## Description:
+The system consists of the following scripts:
 - `settings.py`
-    - U ovoj skripti se vrsi kreiranje foldera  MFCC i Mel (u svakom od njih se kreiraju folderi fold_i (i je u opsegu [1,10] )) u kojima ce se cuvati PNG grafici treinranja, modeli i istorija treniranja (history). 
+    - This script creates the "MFCC" and "Mel" folders (each containing folders named "fold_i" where "i" ranges from 1 to 10). These folders are used to store PNG training graphs, models, and training history. (history). 
 - `AudioPrep.py`
-    - Skripta za preprocesiranje audio fajlova i ekstrakciju deskriptora (moze se birati izmedju MFCC i MelSpectrogram-a).
+    - This script performs preprocessing of audio files and extracts descriptors (you can choose between MFCC and MelSpectrogram).
 - `SoundDS.py`
-    - Skripta za pomocnim funkcijama za ucitavanje audio dataseta, i ekstrakciju deskriptora iz njegovih audio fajlova.
+    - This script contains auxiliary functions for loading the audio dataset and extracting descriptors from its audio files.
 - `data.py`
-    - Skripta za ucitavanje UrbanSounds8k audio dataseta, i ekstrakciju deskriptora iz njega.    
+    - This script loads the UrbanSounds8k audio dataset and extracts descriptors from it.   
 - `model.py`
-    - Skripta za kreiranje Resnet18 modela.
+    - This script creates the ResNet18 model.
 - `train.py`
-    - Skripta za treniranje i evaluaciju modela pokrenutim nad UrbanSounds8k dataset-om.
+    - This script is used for training and evaluating the model on the UrbanSounds8k dataset.
 
-## Koriscenje
-Prvo je potrebno skinuti UrbanSounds8k dataset koji sadrzi foldere:
+## Usage
+First, download the UrbanSounds8k dataset from Kaggle, which contains the following folders:
     - /fold1
     - /fold2
     - /fold3
@@ -28,7 +28,7 @@ Prvo je potrebno skinuti UrbanSounds8k dataset koji sadrzi foldere:
     - /fold9
     - /fold10
     - /UrbanSound8k.csv
-Struktura direktorijuma se treba postaviti na sledeci nacin:
+The directory structure should be set up as follows:
 - ./
     - /fold1
     - /fold2
@@ -42,3 +42,14 @@ Struktura direktorijuma se treba postaviti na sledeci nacin:
     - /fold10
     - /PycharmProject
     - /UrbanSound8k.csv
+      
+To perform audio file classification using the ResNet18 architecture on the UrbanSounds8k dataset, follow these steps:
+
+- Run the settings.py script to create folders for storing model checkpoints and training plots. This script will create the MFCC and Mel folders, each containing subfolders fold_i (where i ranges from 1 to 10).
+
+- Run the data.py script to create a dataframe of extracted features from the UrbanSounds8k dataset. This script will load the audio dataset and extract the desired descriptors.
+
+- Run the model.py script to create a ResNet18 model. This script defines the architecture and initializes the model.
+
+- Run the train.py script to train the model and evaluate its performance. This script will use the preprocessed data and the ResNet18 model to train the classifier on the UrbanSounds8k dataset.
+
